@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ZipArchive.h"
 
 @interface ViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -19,12 +20,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *array = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  
     NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
-    NSString *filePath =[resourcePath stringByAppendingPathComponent:@"gallery.html"];
-    self.htmlContent = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    [self.webView loadHTMLString:self.htmlContent baseURL:baseURL];
-    
+    NSString *filePath =[array[0] stringByAppendingPathComponent:@"webapp/gallery.html"];
+      NSString *webappPath = [resourcePath stringByAppendingPathComponent:@"webapp.zip"];
+    NSString *destDir = [array[0] stringByAppendingPathComponent:@"webapp.zip"];
+    NSString *newWebappDir = [array[0] stringByAppendingPathComponent:@"webapp"];
+    if (access([webappPath UTF8String], 0) == 0) {
+        BOOL flag = [fileManager copyItemAtPath:webappPath toPath:destDir error:nil];
+        if (flag) {
+            // 解压
+            if (access([destDir UTF8String], 0) == 0) {
+                BOOL unzipRet = unZipFile(destDir, newWebappDir,YES);
+                if (unzipRet) {
+                    remove([destDir UTF8String]);
+                }
+            }
+            self.htmlContent = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+            NSURL *baseURL =[NSURL fileURLWithPath:newWebappDir isDirectory:YES];
+            [self.webView loadHTMLString:self.htmlContent baseURL:baseURL];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
