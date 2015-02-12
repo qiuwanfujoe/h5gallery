@@ -11,7 +11,7 @@
 @interface AppDelegate ()
 @property (strong) NSMutableArray *indexAr;
 @property (strong) NSMutableArray *indexArray;
-@property (strong) NSMutableArray *indexs;
+@property (strong) NSMutableArray *indexsaaa;
 @end
 
 @implementation AppDelegate
