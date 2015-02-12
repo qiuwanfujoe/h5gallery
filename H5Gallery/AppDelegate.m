@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-@property (assign) NSInterger index;
+@property (strong) NSString *indexString;
 @end
 
 @implementation AppDelegate
