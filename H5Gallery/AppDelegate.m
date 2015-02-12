@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-@property (strong) NSString *indexString;
+@property (strong) NSMutableArray *indexString;
 @end
 
 @implementation AppDelegate
