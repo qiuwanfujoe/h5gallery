@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
 @property (nonatomic, assign) BOOL flag;
+@property (strong, nonatomic) NSString *msterString;
 @end
 

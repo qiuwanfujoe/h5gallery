@@ -53,6 +53,7 @@
 		F34221DC1A346DDC00ED49B2 /* H5GalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5GalleryTests.m; sourceTree = "<group>"; };
 		F3A841C41B39A778008EF07C /* DevTestFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevTestFile.h; sourceTree = "<group>"; };
 		F3A841C51B39A778008EF07C /* DevTestFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevTestFile.m; sourceTree = "<group>"; };
+		F3A841C71B39A8D8008EF07C /* MasterHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterHeader.h; sourceTree = "<group>"; };
 		F3BEA4E51A35EED3002292B3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F3BEA4E71A35EF24002292B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F3BEA4E91A35EF2B002292B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +131,7 @@
 				F34221C01A346DDC00ED49B2 /* Supporting Files */,
 				F3A841C41B39A778008EF07C /* DevTestFile.h */,
 				F3A841C51B39A778008EF07C /* DevTestFile.m */,
+				F3A841C71B39A8D8008EF07C /* MasterHeader.h */,
 			);
 			path = H5Gallery;
 			sourceTree = "<group>";
